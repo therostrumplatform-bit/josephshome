@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hire Us — Joseph's Home</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+  :root{
+    --navy:#1F2C3C; --teal:#2A82A0; --sky:#D8F6FD; --paper:#FFFFFF;
+    --wash:#F4FAFC; --slate:#5C6B7A; --line:#E1EAEF; --gold:#C99A2E;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--paper); color:var(--navy); font-family:'Inter',sans-serif; line-height:1.6; }
+  h1,h2,h3,.btn,.eyebrow,nav a{ font-family:'Montserrat',sans-serif; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 28px; }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+
+  .qa{ margin:16px 0; padding:14px 18px; background:#FFF8E6; border:1.5px dashed var(--gold); border-radius:8px; font-size:13.5px; color:#6B5310; line-height:1.55; }
+  .qa b{ display:inline-flex; align-items:center; gap:6px; color:#8A6300; }
+  .qa b::before{ content:"?"; display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; border-radius:50%; background:var(--gold); color:#fff; font-size:11px; font-weight:700; }
+
+  header{ border-bottom:1px solid var(--line); padding:16px 0; }
+  header .wrap{ display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand img{ width:40px; height:40px; border-radius:50%; }
+  .brand .word{ font-weight:700; font-size:15.5px; color:var(--navy); line-height:1.2; }
+  .brand .word small{ display:block; font-weight:500; font-size:10.5px; letter-spacing:.10em; color:var(--slate); }
+  nav{ display:flex; align-items:center; gap:26px; font-size:14px; font-weight:500; }
+  nav a{ text-decoration:none; color:var(--slate); }
+  nav a:hover{ color:var(--teal); }
+  .nav-give{ background:var(--teal); color:#fff !important; padding:9px 18px; border-radius:999px; font-weight:600; }
+
+  .hero{ background:var(--sky); padding:48px 0 40px; }
+  .eyebrow{ display:block; font-size:12px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:var(--teal); margin-bottom:12px; }
+  .hero h1{ font-size:34px; font-weight:800; line-height:1.2; margin:0 0 12px; max-width:22ch; }
+  .hero p{ font-size:15.5px; max-width:60ch; opacity:.8; margin:0; }
+
+  section{ padding:52px 0; }
+  section.alt{ background:var(--wash); }
+  h2{ font-size:24px; margin:0 0 6px; }
+  .sub{ color:var(--slate); font-size:14px; margin:0 0 24px; }
+
+  .service{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:28px; align-items:start; margin-bottom:16px; }
+  .service-icon{
+    aspect-ratio:4/3; background:var(--navy); border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .service-icon svg{ width:34%; height:34%; }
+  .service-body ul{ margin:0 0 18px; padding-left:18px; font-size:14px; color:var(--slate); }
+  .service-body li{ margin-bottom:4px; }
+  .service-body p{ font-size:14px; color:var(--slate); margin:0 0 14px; }
+
+  form{ display:flex; flex-direction:column; gap:14px; margin-top:8px; }
+  .field label{ display:block; font-size:12.5px; font-weight:600; color:var(--navy); margin-bottom:5px; }
+  .field input, .field textarea{
+    width:100%; border:1px solid var(--line); border-radius:9px;
+    padding:10px 12px; font-family:'Inter',sans-serif; font-size:13.5px;
+    background:#fff; outline:none;
+  }
+  .field input:focus, .field textarea:focus{ border-color:var(--teal); }
+  .field-row{ display:flex; gap:14px; }
+  .field-row .field{ flex:1; }
+  .radio-row{ display:flex; gap:18px; font-size:13.5px; align-items:center; }
+  .radio-row label{ display:flex; align-items:center; gap:6px; font-weight:500; }
+  .check-row{ display:flex; flex-direction:column; gap:8px; font-size:13.5px; }
+  .check-row label{ display:flex; align-items:center; gap:8px; font-weight:500; }
+  .btn-submit{
+    background:var(--teal); color:#fff; border:none; border-radius:999px;
+    padding:13px 22px; font-weight:600; font-size:14px; cursor:pointer;
+    font-family:'Montserrat',sans-serif; margin-top:4px; align-self:flex-start;
+  }
+  .btn-submit:hover{ background:#256f8a; }
+
+  .form-card{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; }
+  .form-card h3{ font-size:16px; margin:0 0 4px; color:var(--teal); }
+  .form-card .fs{ font-size:12.5px; color:var(--slate); margin:0 0 16px; }
+
+  .employer-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:28px; align-items:start; }
+  .employer-grid .service-icon{ aspect-ratio:1/1; }
+
+  footer{ background:var(--navy); color:#C9D3E2; padding:44px 0 26px; font-size:13px; }
+  footer .fgrid{ display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap; }
+  footer .fbrand{ display:flex; gap:12px; max-width:280px; }
+  footer .fbrand img{ width:40px; height:40px; border-radius:50%; }
+  footer .fbrand .t{ color:#fff; font-weight:700; font-family:'Montserrat',sans-serif; font-size:14px; }
+  footer .fcols{ display:flex; gap:50px; }
+  footer .fcols h4{ font-family:'Montserrat',sans-serif; font-size:11.5px; text-transform:uppercase; letter-spacing:.06em; color:#8FA0BD; margin:0 0 10px; }
+  footer .fcols ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  footer a{ color:#C9D3E2; text-decoration:none; }
+  footer a:hover{ color:var(--sky); }
+  footer .disclaimer{ margin-top:26px; padding-top:20px; border-top:1px solid rgba(255,255,255,.12); font-size:12px; color:#7C8CAB; line-height:1.6; }
+
+  @media (max-width:860px){
+    .service, .employer-grid{ grid-template-columns:1fr; }
+    nav{ display:none; }
+    .field-row{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="https://josephshome.therostrum-platform-454.workers.dev/">
+      <img src="https://josephshome.therostrum-platform-454.workers.dev/assets/josephs-home-logo.jpg" alt="Joseph's Home logo">
+      <span class="word">Joseph's Home<small>GULFPORT, MISSISSIPPI</small></span>
+    </a>
+    <nav>
+      <a href="https://josephshome.therostrum-platform-454.workers.dev/who-we-are">Who we are</a>
+      <a href="https://josephshome.therostrum-platform-454.workers.dev/stories/">Stories</a>
+      <a href="https://josephshome.therostrum-platform-454.workers.dev/faq.html">FAQ</a>
+      <a href="https://app.onestepsoftware.com/forms/XuEfGXU">Apply</a>
+      <a class="nav-give" href="https://www.paypal.com/donate?token=AknyFZGFmzEux1YdIVwywMqJVZlNUK8Oud21fNOn1mbk6ijqE3n0xREdf3pgPSJarlSlcBfbX4q4sPCk&locale.x=US">Give</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="qa"><b>NEEDS A DECISION</b> Same nav question as the Give page — the Gemini draft used Home/Program/Alumni/Connect/Donate. This page probably wants its own nav link too ("Hire Us") once that's settled, since right now nothing in the live site's nav points here.</div>
+  <div class="qa"><b>NEEDS BACKEND</b> All three forms below are visually complete but don't submit anywhere yet — they need to either post to an email/CRM (Formspree, a Zapier webhook, etc.) or route into the same OneStep system the application uses. Let me know which and I'll wire it up.</div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Employment &amp; community</span>
+    <h1>Hire us. Invest in community. Work with the men of Joseph's Home.</h1>
+    <p>Work is part of discipleship here, not a way to pay us back. When you hire our crews or partner with us on staffing, you're investing directly in a man's recovery — and getting reliable, accountable work in return.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Full Service Lawn Care</h2>
+    <p class="sub">Professional crews, pristine results</p>
+    <div class="service">
+      <div class="service-icon">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#D8F6FD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M30 70 L30 40 M50 70 L50 30 M70 70 L70 45"/>
+          <ellipse cx="50" cy="75" rx="35" ry="6" fill="#2A82A0" stroke="none"/>
+        </svg>
+      </div>
+      <div class="service-body">
+        <p><strong>Our crews offer:</strong></p>
+        <ul>
+          <li>Mowing</li>
+          <li>Edging</li>
+          <li>Weed eating, hedge trim, and detailed cleanup</li>
+        </ul>
+        <p>Pristine lawns, reliable service — request a free quote below and tell us about your property size and specific needs.</p>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Request a Lawn Care Quote</h3>
+      <p class="fs">We'll follow up within a couple of business days.</p>
+      <form>
+        <div class="field-row">
+          <div class="field"><label>Name</label><input type="text" placeholder="Your name"></div>
+          <div class="field"><label>Phone or email</label><input type="text" placeholder="Best way to reach you"></div>
+        </div>
+        <div class="field"><label>Property address</label><input type="text" placeholder="Where the work is needed"></div>
+        <div class="field"><label>Property size &amp; specific needs</label><textarea rows="3" placeholder="Approximate lot size, any problem areas, how often you'd like service"></textarea></div>
+        <button type="submit" class="btn-submit">Request a free lawn quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Hire a Reliable Moving Crew</h2>
+    <p class="sub">Our crews handle the heavy lifting, with accountability</p>
+    <div class="service">
+      <div class="service-icon">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#D8F6FD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="20" y="35" width="45" height="30" rx="2"/>
+          <path d="M65 45 h12 l8 10 v10 h-20 z"/>
+          <circle cx="35" cy="70" r="6" fill="#1F2C3C"/>
+          <circle cx="72" cy="70" r="6" fill="#1F2C3C"/>
+        </svg>
+      </div>
+      <div class="service-body">
+        <p>A typical moving crew consists of two men. To request a quote, please provide:</p>
+        <ul>
+          <li>Typical crew size needed (2 men)</li>
+          <li>List of heavy items (e.g. piano, large safe)</li>
+          <li>Estimated number of rooms</li>
+          <li>Final destination</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Moving Inquiry Form</h3>
+      <div class="field-row">
+        <div class="field"><label>Current location</label><input type="text" placeholder="Moving from"></div>
+        <div class="field"><label>Final destination</label><input type="text" placeholder="Moving to"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Estimated number of rooms</label><input type="text" placeholder="e.g. 3 bedroom house"></div>
+        <div class="field"><label>Preferred moving date</label><input type="text" placeholder="Date or date range"></div>
+      </div>
+      <div class="field"><label>List all heavy items</label><textarea rows="2" placeholder="Piano, gun safe, appliances, etc."></textarea></div>
+      <div class="field">
+        <label>Truck / trailer details</label>
+        <div class="check-row">
+          <label><input type="checkbox"> I have a box truck or U-Haul</label>
+          <label><input type="checkbox"> I need to rent your uncovered trailer</label>
+        </div>
+      </div>
+      <button type="submit" class="btn-submit">Submit moving request</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Employer Solutions: Find Accountable Labor</h2>
+    <p class="sub">Partner with us for reliable talent</p>
+    <div class="employer-grid">
+      <div class="service-icon">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#D8F6FD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="35" cy="35" r="12"/>
+          <path d="M15 68 q20 -20 40 0"/>
+          <circle cx="70" cy="40" r="9"/>
+          <path d="M55 68 q15 -15 30 0"/>
+        </svg>
+      </div>
+      <div class="service-body">
+        <p><strong>We sell accountability.</strong> Finding reliable labor is tough — let us help you find the right fit.</p>
+        <p><strong>Accountability and regular random drug tests.</strong> Benefit from our structured accountability and regular random drug tests, with shared results (with signed client consent and authorization).</p>
+        <p>Full-time and temp-to-full-time assistance available.</p>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <h3>Employer Inquiry Form</h3>
+      <div class="field"><label>Briefly state what you're looking for (skills, roles)</label><textarea rows="2" placeholder="e.g. two men for warehouse work, general labor, skilled trades"></textarea></div>
+      <div class="field">
+        <label>Full time or temp-to-full-time?</label>
+        <div class="radio-row">
+          <label><input type="radio" name="jh-emp-type"> Full time</label>
+          <label><input type="radio" name="jh-emp-type"> Temp-to-full-time</label>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Company name &amp; contact person</label><input type="text" placeholder="Company / contact"></div>
+        <div class="field"><label>Contact email or phone</label><input type="text" placeholder="Best way to reach you"></div>
+      </div>
+      <button type="submit" class="btn-submit">Connect for staffing</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <img src="https://josephshome.therostrum-platform-454.workers.dev/assets/josephs-home-logo.jpg" alt="Joseph's Home logo">
+        <div>
+          <div class="t">Joseph's Home</div>
+          <div>A faith-based sober living home for men<br>Gulfport, Mississippi</div>
+        </div>
+      </div>
+      <div class="fcols">
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li><a href="tel:+12286694346">228-669-4346</a></li>
+            <li><a href="mailto:jeffyork@thejosephhome.org">jeffyork@thejosephhome.org</a></li>
+            <li><a href="https://www.facebook.com/thejosephhome/">Facebook</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Take a step</h4>
+          <ul>
+            <li><a href="https://app.onestepsoftware.com/forms/XuEfGXU">Apply to the home</a></li>
+            <li><a href="https://josephshome.therostrum-platform-454.workers.dev/faq.html">Questions and answers</a></li>
+            <li><a href="https://www.paypal.com/donate?token=AknyFZGFmzEux1YdIVwywMqJVZlNUK8Oud21fNOn1mbk6ijqE3n0xREdf3pgPSJarlSlcBfbX4q4sPCk&locale.x=US">Give</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      Joseph's Home is a faith-based sober living home. We are not a rehabilitation facility, a detox, or a medical provider. If you or someone you love is in immediate danger, call 911. For free, confidential help at any hour, call or text 988, or call SAMHSA's national helpline at 1-800-662-4357.<br><br>
+      Scripture quotations are from the King James Version. © 2026 Joseph's Home.
+    </div>
+  </div>
+</footer>
+
+<script src="assets/jh-chatbot.js" defer></script>
+
+</body>
+</html>
