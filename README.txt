@@ -59,6 +59,22 @@ WHAT'S IN HERE (36 files)
 
 
 THINGS FIXED IN THIS PASS
+  - Real logo now included: josephs-home-logo.jpg is the clean circular
+    seal (no watermark, no baked-in title) — the old file had been
+    deleted from the repo during a prior full-replace deploy.
+  - Homepage nav now includes "Hire us," and Joey Watts's photo is now
+    in the "In loving memory" section on the homepage.
+  - employment.html: real photos in for lawn care, moving crew, and
+    employer solutions (previously navy icon placeholders).
+  - employment.html: added a scannable QR code at the top of the page,
+    linking to the page itself — verified to actually decode correctly.
+  - employment.html: fixed two more broken "/assets/josephs-home-logo.jpg"
+    references that were missed in an earlier pass.
+  - employment.html: all three inquiry forms (lawn care, moving,
+    employer) now actually submit — via FormSubmit.co, no backend
+    needed — and email jeff.york@josephshome.org. The moving and
+    employer forms were previously missing <form> tags entirely, so
+    their submit buttons did nothing at all.
   - Every page's logo/photo paths corrected from "/assets/..." to flat
     filenames (the repo has no /assets/ folder).
   - Every "/stories/..." link corrected to flat filenames
@@ -74,25 +90,27 @@ THINGS FIXED IN THIS PASS
 
 
 STILL OPEN — NOT DONE IN THIS PACKAGE
-  - Real logo file: this package still points to "josephs-home-logo.jpg"
-    (already in your repo). A proper on-brand replacement
-    (josephs-home-horizontal-2400.png etc.) was referenced in a logo
-    brand-guide README you sent, but the actual PNG/SVG files weren't
-    included — send them and I'll swap it in everywhere.
   - Homepage stats placeholders: the "12 months / +2 years / Men 18+"
     facts strip is real, but nowhere on the homepage are there numbers
     like "men served" or "years operating" — none were ever given.
-  - employment.html's lawn-care/moving-crew sections still use plain
-    icon placeholders instead of real crew photos.
-  - None of the three inquiry forms (lawn care, moving, employer) or
-    the shop's "Add to cart" buttons submit anywhere yet — no backend
-    connected.
+  - The employer-solutions warehouse photo on employment.html came from
+    a phone screenshot of a flyer, not the original file, so it's
+    lower resolution than the lawn-care/moving-crew photos next to it.
+    Send the original PNG/JPG and I'll swap in a sharper version.
+  - The shop's "Add to cart" buttons on give.html don't submit anywhere
+    yet — no backend/payment processor connected. (The three employment
+    forms — lawn care, moving, employer — DO work now: they email
+    jeff.york@josephshome.org via FormSubmit.co, no backend needed.)
   - Shop prices are still placeholder except the alumni ring tiers.
   - Domain in canonical/OG tags is "www.thejosephhome.org" — the logo
     README says the correct address is "theJosephHome.org" (no www,
     mixed case). Not fixed yet since DNS isn't pointed there.
   - Golf banner CTA links to charitygolftoday.com/josephshomegolftournament
     — confirm that's still the right registration link closer to Nov 7.
+  - FormSubmit.co sends a one-time "confirm your email" link to
+    jeff.york@josephshome.org the FIRST time a form is submitted after
+    this deploy — someone needs to click that confirmation link once,
+    or all three inquiry forms will silently fail to deliver.
 
 
 KEY FACTS (for reference / future edits)

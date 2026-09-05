@@ -206,7 +206,7 @@
 <header>
   <div class="wrap">
     <a class="brand" href="https://josephshome.therostrum-platform-454.workers.dev/">
-      <img src="https://josephshome.therostrum-platform-454.workers.dev/assets/josephs-home-logo.jpg" alt="Joseph's Home logo">
+      <img src="josephs-home-logo.jpg" alt="Joseph's Home logo">
       <span class="word">Joseph's Home<small>GULFPORT, MISSISSIPPI</small></span>
     </a>
     <nav>
@@ -222,14 +222,20 @@
 
 <div class="wrap">
   <div class="qa"><b>NEEDS BACKEND</b> All three forms below are visually complete but don't submit anywhere yet — they need to either post to an email/CRM (Formspree, a Zapier webhook, etc.) or route into the same OneStep system the application uses. Let me know which and I'll wire it up.</div>
-  <div class="qa"><b>NEEDS PHOTOS</b> Each section below uses a clean navy icon as a stand-in for the crew photos shown in your flyer mockup. Send real photos of the lawn care and moving crews when you have them and I'll swap these out the same way I did the shop page.</div>
+  <div class="qa"><b>PHOTO NOTE</b> Lawn care and moving crew photos are in. The employer-solutions warehouse photo came from a phone screenshot of your flyer rather than the original file, so it's lower resolution than the other two — send the original PNG/JPG if you have it and I'll swap in a sharper version.</div>
 </div>
 
 <section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Employment &amp; community</span>
-    <h1>Hire us. Invest in community. Work with the men of Joseph's Home.</h1>
-    <p>Work is part of discipleship here, not a way to pay us back. When you hire our crews or partner with us on staffing, you're investing directly in a man's recovery — and getting reliable, accountable work in return.</p>
+  <div class="wrap" style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;justify-content:space-between;">
+    <div style="flex:1 1 420px;">
+      <span class="eyebrow">Employment &amp; community</span>
+      <h1>Hire us. Invest in community. Work with the men of Joseph's Home.</h1>
+      <p>Work is part of discipleship here, not a way to pay us back. When you hire our crews or partner with us on staffing, you're investing directly in a man's recovery — and getting reliable, accountable work in return.</p>
+    </div>
+    <div style="flex:0 0 auto;text-align:center;background:#fff;border-radius:14px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,0.08);">
+      <img src="qr-hire-us.png" alt="QR code linking to this page's inquiry forms" style="width:150px;height:150px;display:block;">
+      <p style="margin:8px 0 0;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.02em;">SCAN FOR A FREE QUOTE</p>
+    </div>
   </div>
 </section>
 
@@ -238,11 +244,8 @@
     <h2>Full Service Lawn Care</h2>
     <p class="sub">Professional crews, pristine results</p>
     <div class="service">
-      <div class="service-icon">
-        <svg viewBox="0 0 100 100" fill="none" stroke="#D8F6FD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M30 70 L30 40 M50 70 L50 30 M70 70 L70 45"/>
-          <ellipse cx="50" cy="75" rx="35" ry="6" fill="#2A82A0" stroke="none"/>
-        </svg>
+      <div class="service-icon" style="background:none;padding:0;overflow:hidden;">
+        <img src="lawn-care.jpg" alt="Landscaped yard with clean mulch beds and mowed lawn" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
       </div>
       <div class="service-body">
         <p><strong>Our crews offer:</strong></p>
@@ -258,13 +261,16 @@
     <div class="form-card">
       <h3>Request a Lawn Care Quote</h3>
       <p class="fs">We'll follow up within a couple of business days.</p>
-      <form>
+      <form action="https://formsubmit.co/jeff.york@josephshome.org" method="POST">
+        <input type="hidden" name="_subject" value="Lawn Care Quote Request — Joseph's Home site">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="employment.html">
         <div class="field-row">
-          <div class="field"><label>Name</label><input type="text" placeholder="Your name"></div>
-          <div class="field"><label>Phone or email</label><input type="text" placeholder="Best way to reach you"></div>
+          <div class="field"><label>Name</label><input type="text" name="Name" placeholder="Your name"></div>
+          <div class="field"><label>Phone or email</label><input type="text" name="Phone or email" placeholder="Best way to reach you"></div>
         </div>
-        <div class="field"><label>Property address</label><input type="text" placeholder="Where the work is needed"></div>
-        <div class="field"><label>Property size &amp; specific needs</label><textarea rows="3" placeholder="Approximate lot size, any problem areas, how often you'd like service"></textarea></div>
+        <div class="field"><label>Property address</label><input type="text" name="Property address" placeholder="Where the work is needed"></div>
+        <div class="field"><label>Property size &amp; specific needs</label><textarea rows="3" name="Property size and needs" placeholder="Approximate lot size, any problem areas, how often you'd like service"></textarea></div>
         <button type="submit" class="btn-submit">Request a free lawn quote</button>
       </form>
     </div>
@@ -276,13 +282,8 @@
     <h2>Hire a Reliable Moving Crew</h2>
     <p class="sub">Our crews handle the heavy lifting, with accountability</p>
     <div class="service">
-      <div class="service-icon">
-        <svg viewBox="0 0 100 100" fill="none" stroke="#D8F6FD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="20" y="35" width="45" height="30" rx="2"/>
-          <path d="M65 45 h12 l8 10 v10 h-20 z"/>
-          <circle cx="35" cy="70" r="6" fill="#1F2C3C"/>
-          <circle cx="72" cy="70" r="6" fill="#1F2C3C"/>
-        </svg>
+      <div class="service-icon" style="background:none;padding:0;overflow:hidden;">
+        <img src="moving-crew.jpg" alt="Joseph's Home moving crew loading a couch into a truck" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
       </div>
       <div class="service-body">
         <p>A typical moving crew consists of two men. To request a quote, please provide:</p>
@@ -297,23 +298,28 @@
 
     <div class="form-card">
       <h3>Moving Inquiry Form</h3>
-      <div class="field-row">
-        <div class="field"><label>Current location</label><input type="text" placeholder="Moving from"></div>
-        <div class="field"><label>Final destination</label><input type="text" placeholder="Moving to"></div>
-      </div>
-      <div class="field-row">
-        <div class="field"><label>Estimated number of rooms</label><input type="text" placeholder="e.g. 3 bedroom house"></div>
-        <div class="field"><label>Preferred moving date</label><input type="text" placeholder="Date or date range"></div>
-      </div>
-      <div class="field"><label>List all heavy items</label><textarea rows="2" placeholder="Piano, gun safe, appliances, etc."></textarea></div>
-      <div class="field">
-        <label>Truck / trailer details</label>
-        <div class="check-row">
-          <label><input type="checkbox"> I have a box truck or U-Haul</label>
-          <label><input type="checkbox"> I need to rent your uncovered trailer</label>
+      <form action="https://formsubmit.co/jeff.york@josephshome.org" method="POST">
+        <input type="hidden" name="_subject" value="Moving Crew Quote Request — Joseph's Home site">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="employment.html">
+        <div class="field-row">
+          <div class="field"><label>Current location</label><input type="text" name="Current location" placeholder="Moving from"></div>
+          <div class="field"><label>Final destination</label><input type="text" name="Final destination" placeholder="Moving to"></div>
         </div>
-      </div>
-      <button type="submit" class="btn-submit">Submit moving request</button>
+        <div class="field-row">
+          <div class="field"><label>Estimated number of rooms</label><input type="text" name="Estimated rooms" placeholder="e.g. 3 bedroom house"></div>
+          <div class="field"><label>Preferred moving date</label><input type="text" name="Preferred date" placeholder="Date or date range"></div>
+        </div>
+        <div class="field"><label>List all heavy items</label><textarea rows="2" name="Heavy items" placeholder="Piano, gun safe, appliances, etc."></textarea></div>
+        <div class="field">
+          <label>Truck / trailer details</label>
+          <div class="check-row">
+            <label><input type="checkbox" name="Has box truck or U-Haul" value="Yes"> I have a box truck or U-Haul</label>
+            <label><input type="checkbox" name="Needs trailer rental" value="Yes"> I need to rent your uncovered trailer</label>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit">Submit moving request</button>
+      </form>
     </div>
   </div>
 </section>
@@ -323,13 +329,8 @@
     <h2>Employer Solutions: Find Accountable Labor</h2>
     <p class="sub">Partner with us for reliable talent</p>
     <div class="employer-grid">
-      <div class="service-icon">
-        <svg viewBox="0 0 100 100" fill="none" stroke="#D8F6FD" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="35" cy="35" r="12"/>
-          <path d="M15 68 q20 -20 40 0"/>
-          <circle cx="70" cy="40" r="9"/>
-          <path d="M55 68 q15 -15 30 0"/>
-        </svg>
+      <div class="service-icon" style="background:none;padding:0;overflow:hidden;">
+        <img src="warehouse-crew.jpg" alt="Joseph's Home crew working in a warehouse" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
       </div>
       <div class="service-body">
         <p><strong>We sell accountability.</strong> Finding reliable labor is tough — let us help you find the right fit.</p>
@@ -340,19 +341,24 @@
 
     <div class="form-card">
       <h3>Employer Inquiry Form</h3>
-      <div class="field"><label>Briefly state what you're looking for (skills, roles)</label><textarea rows="2" placeholder="e.g. two men for warehouse work, general labor, skilled trades"></textarea></div>
-      <div class="field">
-        <label>Full time or temp-to-full-time?</label>
-        <div class="radio-row">
-          <label><input type="radio" name="jh-emp-type"> Full time</label>
-          <label><input type="radio" name="jh-emp-type"> Temp-to-full-time</label>
+      <form action="https://formsubmit.co/jeff.york@josephshome.org" method="POST">
+        <input type="hidden" name="_subject" value="Employer Staffing Inquiry — Joseph's Home site">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="employment.html">
+        <div class="field"><label>Briefly state what you're looking for (skills, roles)</label><textarea rows="2" name="Looking for" placeholder="e.g. two men for warehouse work, general labor, skilled trades"></textarea></div>
+        <div class="field">
+          <label>Full time or temp-to-full-time?</label>
+          <div class="radio-row">
+            <label><input type="radio" name="Employment type" value="Full time"> Full time</label>
+            <label><input type="radio" name="Employment type" value="Temp-to-full-time"> Temp-to-full-time</label>
+          </div>
         </div>
-      </div>
-      <div class="field-row">
-        <div class="field"><label>Company name &amp; contact person</label><input type="text" placeholder="Company / contact"></div>
-        <div class="field"><label>Contact email or phone</label><input type="text" placeholder="Best way to reach you"></div>
-      </div>
-      <button type="submit" class="btn-submit">Connect for staffing</button>
+        <div class="field-row">
+          <div class="field"><label>Company name &amp; contact person</label><input type="text" name="Company and contact" placeholder="Company / contact"></div>
+          <div class="field"><label>Contact email or phone</label><input type="text" name="Contact info" placeholder="Best way to reach you"></div>
+        </div>
+        <button type="submit" class="btn-submit">Connect for staffing</button>
+      </form>
     </div>
   </div>
 </section>
@@ -361,7 +367,7 @@
   <div class="wrap">
     <div class="fgrid">
       <div class="fbrand">
-        <img src="https://josephshome.therostrum-platform-454.workers.dev/assets/josephs-home-logo.jpg" alt="Joseph's Home logo">
+        <img src="josephs-home-logo.jpg" alt="Joseph's Home logo">
         <div>
           <div class="t">Joseph's Home</div>
           <div>A faith-based sober living home for men<br>Gulfport, Mississippi</div>
